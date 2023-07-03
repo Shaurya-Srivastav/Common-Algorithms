@@ -11,16 +11,19 @@ Given an Array of size n
 Assumption: 
 The algorithm can run as long as max >= min. Once max = min, we have reached the answer so the loop should break.
 * ALGORITHM ONLY WORKS FOR A SORTED LIST *
+
+Big O: O(log_2 (n): This is because the algorithm depends on how many times can we half n
 '''
 
 
 def binarySearch(array, target):
-  min = 0
-  max = len(array) - 1
+  min, max = 0, len(array) - 1
   guess = 0
 
   while (max >= min):
     guess = (max + min) // 2
+    #guess = min + ((max - min)//2) #if we get an integer overflow (value is greater 2^32), this will help solve it.
+    #works by taking the distance from max to min and halving it. Then adding to min to find the midpoint
     if array[guess] == target:
       return guess
     elif array[guess] > target:
