@@ -12,7 +12,7 @@ Assumption:
 The algorithm can run as long as max >= min. Once max = min, we have reached the answer so the loop should break.
 * ALGORITHM ONLY WORKS FOR A SORTED LIST *
 
-Big O: O(log_2 (n): This is because the algorithm depends on how many times can we half n
+Time Complexity: O(log_2 (n): This is because the algorithm depends on how many times can we half n
 '''
 
 
